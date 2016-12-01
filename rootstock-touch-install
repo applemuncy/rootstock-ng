@@ -154,12 +154,12 @@ if [ -z "$SYSIMG" ] || \
 	echo "need valid system.img path and type application/octet-stream"
 	usage
 fi
-
-if [ ! -z "$CUST_TARPATH" ] && \
-	[  "$(file --mime-type $CUST_TARPATH|sed 's/^.* //')" != "application/x-xz" ]; then
-	echo "Custom tarball needs to be valid path and type .tar.xz"
-	usage
-fi
+#FIXME soon to handle either tar.gz or tar.xz
+#if [ ! -z "$CUST_TARPATH" ] && \
+#	[  "$(file --mime-type $CUST_TARPATH|sed 's/^.* //')" != "application/x-xz" ]; then
+#	echo "Custom tarball needs to be valid path and type .tar.xz"
+#	usage
+#fi
 
 [ $(id -u) -ne 0 ] && exec sudo $0 $SUDOARGS
 
@@ -211,7 +211,10 @@ echo "[done]"
 if [ ! -z "$CUST_TARPATH" ];then
 	echo -n "unpacking custom tarball"
 	do_shell "mkdir -p /cache/system/custom"
-	do_shell "cd /cache && xzcat /recovery/$CUST_TARBALL | tar xf -"
+#quick hack to do what I need to do.
+#FIXME soon to handle either.
+#       do_shell "cd /cache && xzcat /recovery/$CUST_TARBALL | tar xf -"
+	do_shell "cd /cache && zcat /recovery/$CUST_TARBALL | tar xf -"
 	echo "[done]"
 fi
 
