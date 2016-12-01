@@ -6,9 +6,10 @@ https://launchpad.net/project-rootstock-ng
 dec. 1, 2016
 ---
 Original work by Oliver Grawert, https://launchpad.net/~ogra 
+---
 And Marius Gripsgard, https://launchpad.net/~mariogrip 
-===
-Modes and updates Apple Muncy 
+---
+with new updates from Apple Muncy 
 ---
 Copyright (C) 2016 Apple Muncy    j.apple.muncy@gmail.com
 

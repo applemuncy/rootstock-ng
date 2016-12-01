@@ -27,7 +27,15 @@ Now select "Boot to Recovery" (or similar) in the bootloader menu
 
 Once the device booted into recovery mode run rootsotck-touch-install:
 
-./rootsotck-touch-install ./trusty-trusty-preinstalled-touch-armhf.tar.gz ./system.img
+as of v1.0.1
+./rootsotck-touch-install ./vivid-preinstalled-touch-armhf.tar.gz ./system.img
+
+The -c or --custom option now expects the vivid-preinstalled-touch-i386.custom.tar.gz
+as tar.gz
+
+A new option -e or --extra expects a fully expanded ./extra/cache/system/*
+files to be pushed to the /cache/system/*
+
 
 (the above example assumes the needed files are in the current dir)
 
